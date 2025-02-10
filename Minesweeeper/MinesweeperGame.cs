@@ -49,11 +49,7 @@
                 {
                     _mineService.DisarmMine(_player.Position);  // Disarm the mine
                     _player.TakeDamage();  // Reduce lives
-                    _gameDisplay.DisplayMessage($"Boom! You stepped on a mine at {PositionToString(_player.Position)}.");
-                }
-                else
-                {
-                    //_gameDisplay.ClearMessages(); // Clear the message queue if no mine is hit
+                    _gameDisplay.DisplayMessage($"Boom! You stepped on a mine at {_player.Position}.");
                 }
 
                 // If the player reaches the other side (last column), they win
@@ -74,14 +70,6 @@
         private bool IsValidMove(string move)
         {
             return move == "up" || move == "down" || move == "left" || move == "right";
-        }
-
-        // Convert a Position to a readable string format (e.g., A1, B2)
-        private string PositionToString(Position position)
-        {
-            char column = (char)('A' + position.x);  // Convert x to a column letter
-            int row = position.y + 1;  // Convert y to a 1-based index for row
-            return $"{column}{row}";
         }
     }
 }

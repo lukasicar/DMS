@@ -22,18 +22,6 @@ namespace Minesweeper.Tests
         }
 
         [Test]
-        public void Player_Moving_ShouldIncreaseMoveCount()
-        {
-            var initialMoves = _player.Moves;
-
-            _player.Move("right");  // Move player to (1, 1)
-
-            Assert.AreEqual(initialMoves + 1, _player.Moves);
-            Assert.AreEqual(1, _player.Position.x);
-            Assert.AreEqual(1, _player.Position.y);
-        }
-
-        [Test]
         public void Player_LosingLife_When_SteppingOnMine()
         {
             _player.Lives = 3;

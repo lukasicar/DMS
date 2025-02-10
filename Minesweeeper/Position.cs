@@ -26,7 +26,7 @@
         }
 
         // To represent the position as a human-readable string (e.g., A1, B2)
-        public string ToPositionString()
+        public override string ToString()
         {
             char column = (char)('A' + x);  // Convert x to a column letter
             int row = y + 1;  // Convert y to a row number (1-indexed)

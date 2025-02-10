@@ -44,20 +44,15 @@
             }
 
             // Display player stats: position, lives, moves
-            Console.WriteLine($"Player Position: {_player.Position.ToPositionString()}");
+            Console.WriteLine($"Player Position: {_player.Position}");
             Console.WriteLine($"Lives: {_player.Lives}, Moves: {_player.Moves}");
         }
 
         public void DisplayMessage(string message)
         {
             // Add the message to the queue so it can be displayed later
+            Console.WriteLine(message);
             _messageQueue.Enqueue(message);
-        }
-
-        // Optional method to clear the messages
-        public void ClearMessages()
-        {
-            _messageQueue.Clear();
         }
     }
 }
